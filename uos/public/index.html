@@ -3,50 +3,42 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0484FC" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>파아란 시대</title>
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/manifest.json" />
+  <title>파아란시대</title>
   <meta name="description" content="더 나은 시대인의 생활을 위해">
 
   <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="파아란 시대">
+  <meta itemprop="name" content="파아란시대">
   <meta itemprop="description" content="더 나은 시대인의 생활을 위해">
-  <meta name="keywords" content="파아란, 파아란 시대, UOS, 시간표, F12, 시립대, 시대">
+  <meta name="keywords" content="파아란, 파아란시대, UOS, 시간표, F12, 시립대, 시대">
   <meta name="author" content="파아란">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="msapplication-TileColor" content="#0484FC">
-  <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo192.png">
-  <meta name="application-name" content="파아란 시대">
+  <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/logo192.png">
+  <meta name="application-name" content="파아란시대">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="파아란 시대">
+  <meta property="og:title" content="파아란시대">
   <meta property="og:description" content="더 나은 시대인의 생활을 위해">
-  <meta property="og:image" content="%PUBLIC_URL%/thumbnail1200x630.png" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/thumbnail1200x630.png" />
   <meta property="og:url" content="https://uos.paaran.com">
 
   <!-- Twitter Meta Tags (카카오톡에서도 활용) -->
-  <meta name="twitter:title" content="파아란 시대">
+  <meta name="twitter:title" content="파아란시대">
   <meta name="twitter:description" content="더 나은 시대인의 생활을 위해">
-  <meta name="twitter:image" content="%PUBLIC_URL%/thumbnail1200x630.png" />
+  <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/thumbnail1200x630.png" />
     
-  
-  <!-- iOS & Android PWA 지원 (ios는 일단 보류) -->
-  <!-- <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="파아란 시대">
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#0484FC"> -->
-
   <!-- 성능 최적화 (외부 도메인 미리 연결, DNS 조회 미리 수행, 주요 CSS 미리 로드) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/logo32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/logo16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/logo32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/public/logo16.png">
 
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3807078578635240"
@@ -56,6 +48,18 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+
+  <!-- ✅ JSDelivr에서 최신 React 빌드 파일 자동 로드 -->
+  <!-- 이 부분은 진짜 필요하다고 생각할 때 넣자 굳이 안넣어도 될 것 같은 느낌
+  <script>
+    fetch("https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/build/asset-manifest.json")
+      .then(response => response.json())
+      .then(manifest => {
+        const mainScript = document.createElement("script");
+        mainScript.src = "https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/uos/build" + manifest.files["main.js"];
+        document.body.appendChild(mainScript);
+      });
+  </script> -->
 </body>
 
 </html>

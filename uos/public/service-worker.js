@@ -8,15 +8,8 @@ const CACHE_LIST = [
   "/offline.html",
   "/favicon.ico",
   "/assets/icons/icons.svg",
-  "/assets/fonts/Pretendard-Black.woff",
-  "/assets/fonts/Pretendard-Bold.woff",
-  "/assets/fonts/Pretendard-ExtraBold.woff",
-  "/assets/fonts/Pretendard-ExtraLight.woff",
   "/assets/fonts/Pretendard-Light.woff",
   "/assets/fonts/Pretendard-Medium.woff",
-  "/assets/fonts/Pretendard-Regular.woff",
-  "/assets/fonts/Pretendard-SemiBold.woff",
-  "/assets/fonts/Pretendard-Thin.woff",
 ];
 
 // Service Worker가 설치될 때 실행 (초기 캐시 설정 병행)
@@ -35,37 +28,48 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // 네트워크 요청이 성공하면 그대로 반환
+        // 응답이 정상적인지 확인 (200 OK 등)
+        if (!response || response.status !== 200) {
+          // 정상적이지 않은 응답은 그대로 반환 (혹은 추가 처리 가능)
+          return response;
+        }
+        // 정상적인 응답인 경우 캐시에 저장하여 동적 업데이트
+        const responseClone = response.clone(); // 응답은 한 번만 사용 가능하므로 복제
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseClone);
+        });
         return response;
       })
       .catch(() => {
-        // 네트워크 요청이 실패한 경우
+        // 네트워크 요청 실패 시 처리
         if (event.request.mode === "navigate") {
-          // 탐색 요청(navigate)이 실패하면 offline.html 반환
+          // 페이지 탐색 요청인 경우 오프라인 페이지 제공
           return caches.match("/offline.html");
         }
-        // 탐색 요청이 아닌 경우 기존 캐시 확인
+        // 그 외 요청은 캐시된 데이터 제공
         return caches.match(event.request);
       })
   );
 });
 
-// Service Worker가 활성화될 때 실행
+// Service Worker 활성화 시, 구버전 캐시 삭제 및 클라이언트 제어
 self.addEventListener("activate", (event) => {
-  // 유지할 캐시 이름 리스트
-  const cacheWhitelist = [CACHE_NAME];
-
   event.waitUntil(
-    // 현재 저장된 모든 캐시 조회
-    caches.keys().then((cacheNames) =>
-      Promise.all(
-        cacheNames.map((cacheName) => {
-          // 현재 버전에 포함되지 않은 캐시 삭제 (= 구버전 캐시 삭제)
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME) {
+              // 구버전 캐시 삭제
+              return caches.delete(cacheName);
+            }
+          })
+        )
       )
-    )
+      .then(() => {
+        // 새로운 SW가 즉시 모든 클라이언트를 제어할 수 있도록 함
+        return self.clients.claim();
+      })
   );
 });
