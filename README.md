@@ -21,22 +21,22 @@ GitHub에 업로드된 파일은 [JSDelivr](https://www.jsdelivr.com/)을 통해
 
 ### ✅ JavaScript 파일 불러오기
 ```html
-<script src="https://cdn.jsdelivr.net/gh/junwoo5914/paaran-jsdelivr@main/static/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/static/js/main.js"></script>
 ```
 
 ### ✅ CSS 파일 불러오기
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/junwoo5914/paaran-jsdelivr@main/static/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/static/css/main.css">
 ```
 
 ### ✅ 이미지 파일 불러오기
 ```html
-<img src="https://cdn.jsdelivr.net/gh/junwoo5914/paaran-jsdelivr@main/static/images/logo.png" />
+<img src="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/static/images/logo.png" />
 ```
 
 ### ✅ 웹 폰트 로드
 ```css
-@import url('https://cdn.jsdelivr.net/gh/junwoo5914/paaran-jsdelivr@main/static/fonts/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/static/fonts/pretendard.css');
 ```
 
 ---
@@ -50,7 +50,7 @@ GitHub에 업로드된 파일은 [JSDelivr](https://www.jsdelivr.com/)을 통해
 JSDelivr는 GitHub의 최신 커밋을 자동으로 캐싱하지만, 강제 갱신이 필요할 경우 **URL 끝에 `?v=1.0.1` 등의 버전 쿼리를 추가**하면 됩니다.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/junwoo5914/paaran-jsdelivr@main/static/js/main.js?v=1.0.1"></script>
+<script src="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/static/js/main.js?v=1.0.1"></script>
 ```
 
 ### 📌 3. 파일 삭제 또는 업데이트
