@@ -1,4 +1,4 @@
-# 🚀 [paaran-jsdelivr] 파아란의 Static File CDN 저장소
+# 🚀 [paaran-jsdelivr]
 
 이 저장소는 **파아란(PAARAN)의 정적 파일(CSS, JS, 이미지 등)을 CDN으로 제공하기 위한 GitHub 저장소**입니다.  
 GitHub에 업로드된 파일은 [JSDelivr](https://www.jsdelivr.com/)을 통해 글로벌 CDN으로 빠르게 서빙됩니다.
