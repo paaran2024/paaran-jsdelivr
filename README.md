@@ -29,6 +29,7 @@ GitHub에 업로드된 파일은 [JSDelivr](https://www.jsdelivr.com/)을 통해
 │   │   ├── asset-manifest.json
 │
 └── README.md
+````
 
 ---
 
@@ -40,7 +41,7 @@ GitHub에 업로드된 파일은 [JSDelivr](https://www.jsdelivr.com/)을 통해
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/paaran2024/paaran-jsdelivr@main/${프로젝트명}/static/js/main.js"></script>
-````
+```
 
 ### ✅ CSS 파일 불러오기
 
