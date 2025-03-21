@@ -7,7 +7,7 @@ const CACHE_LIST = [
   "/index.html",
   "/offline.html",
   "/favicon.ico",
-  "/assets/icons/icons.svg",
+  "/assets/icons/sprite-icon.svg",
   "/assets/fonts/Pretendard-Light.woff",
   "/assets/fonts/Pretendard-Medium.woff",
 ];
