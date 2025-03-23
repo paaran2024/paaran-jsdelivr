@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오프라인 - 파아란</title>
+  <style>
+    @font-face {
+      font-family: "Pretendard";
+      src: url(./assets/fonts/Pretendard-Light.woff) format("woff");
+      font-weight: 300; /* Light */
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Pretendard";
+      src: url(./assets/fonts/Pretendard-Medium.woff) format("woff");
+      font-weight: 500; /* Medium */
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .top-section {
+      margin-bottom: 25px;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #333;
+      padding: 8px 12px;
+      margin: 0;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .message {
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.5;
+      margin: 25px 0;
+      width: 648px;
+      height: 52px;
+    }
+
+    .return-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #0484fc;
+      border-radius: 30px;
+      padding: 8px 20px;
+    }
+
+    .return-link {
+      text-decoration: none;
+      color: #0484fc;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .return-icon {
+      width: 19px;
+      height: auto;
+    }
+
+    .return-text {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: #0484fc;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-section">
+    <h1 class="title">OFFLINE</h1>
+  </div>
+
+  <div class="icon-wrapper">
+    <svg width="113" height="113">
+      <use xlink:href="./assets/icons/icons.svg#icon-offline"></use>
+    </svg>
+  </div>
+
+  <p class="message">
+    네트워크 연결 상태가 좋지 않아요.<br>
+    연결상태를 확인하거나 다시 접속해 주세요.
+  </p>
+
+  <div class="return-section">
+    <a href="/" class="return-link">
+      <svg width="19" height="18" fill="none" >
+        <use xlink:href="./assets/icons/icons.svg#icon-back"></use>
+      </svg>
+      <p class="return-text">다시 시도하기</p>
+    </a>
+  </div>
+
+</body>
+</html>
